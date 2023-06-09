@@ -1,0 +1,23 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "Hello"
+  say-hi:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo "Hi"
+
+# Orchestrate our job run sequence
+workflows:
+  build_and_test:
+    jobs:
+      - say-hello
+      - say-hi
