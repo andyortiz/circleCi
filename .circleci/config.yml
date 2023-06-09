@@ -2,6 +2,12 @@ version: 2.1
 
 # Define the jobs we want to run for this project
 jobs:
+  test-variable:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run: echo $PRACTICE_VARIABLE
   say-hello:
     docker:
       - image: cimg/base:stable
@@ -19,5 +25,6 @@ jobs:
 workflows:
   build_and_test:
     jobs:
+      - test-variable
       - say-hello
       - say-hi
