@@ -27,5 +27,5 @@ workflows:
     jobs:
       - say-hello
       - say-hi
-      - test-variable:
+      test-variable:
         context: practice_context
