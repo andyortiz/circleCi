@@ -7,7 +7,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: echo PRACTICE_VARIABLE
+      - run: echo $PRACTICE_VARIABLE
   say-hello:
     docker:
       - image: cimg/base:stable
